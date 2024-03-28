@@ -262,7 +262,7 @@ footer a {
         width: 60%;
         height: 400px;
         margin: 40px auto;
-        background-image: url("img/joy05pm.png");
+        background-image: url("../img/joy05pm.png");
         background-size:contain;
         background-repeat: no-repeat;
         background-position: center;
