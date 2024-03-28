@@ -6,10 +6,14 @@
 
 :root {
     --colorTitle: #05ffee;
-    --colorBack: background:linear-gradient(black, #210178);
+    --colorBack: linear-gradient(#000, #1c0080);
     --colorContents: #b1ff08;
     --colorPharagraps: #FCFCFA;
     --colorIndex: #c0004d;
+}
+
+html{
+    background: black;
 }
 
 body {
@@ -18,7 +22,7 @@ body {
     scroll-behavior: smooth;
     padding: 10px;
     text-align: left;
-    background: linear-gradient(#000, #1c0080);
+    background: var(--colorBack);
     background-attachment: fixed;
     color: var(--colorPharagraps);
 
@@ -83,6 +87,46 @@ h4 {
 article {
     margin-bottom: 70px;
 }
+
+#Sistemas ul, #Seleccion ul{
+    list-style: none;
+    padding: 0;
+}
+
+#Sistemas li, #Seleccion li{
+    margin-bottom: 10px;
+}
+
+#Sistemas li{
+    color: var(--colorTitle);
+}
+
+#Sistemas span{
+    font-weight: normal;
+    color: white;
+}
+
+#Seleccion b, b{
+    color: var(--colorIndex);
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+    width: 1.1em;
+    text-align: center;
+}
+
+#Seleccion #palanca, strong{
+    width: auto;
+    padding: 0 10px;
+    border-radius: 40px;
+}
+
+strong{
+    background-color: white;
+    color: black;
+}
+
+
 
 
 .icon-pacman::after {
@@ -195,7 +239,7 @@ article {
 footer {
     text-align: center;
     border-top: 1px solid white;
-    margin-top: 20px;
+    margin-top: 100px;
 }
 
 footer a {
