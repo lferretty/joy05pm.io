@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructivo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&family=Tektur&display=swap');
+
+        /* estilos generales */
+
+
+        :root {
+            --colorTitle: #05ffee;
+            --colorBack: background:linear-gradient(black, #210178);
+            --colorContents: #b1ff08;
+            --colorPharagraps: #FCFCFA;
+            --colorIndex: #c0004d;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            scroll-behavior: smooth;
+            padding: 10px;
+            text-align: left;
+            background: linear-gradient(#000, #1c0080);
+            background-attachment: fixed;
+            color: var(--colorPharagraps);
+
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            text-align: center;
+
+        }
+
+        .encabezado {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1,
+        h2 {
+            font-family: 'tektur';
+            color: var(--colorTitle);
+            margin: 0;
+        }
+
+
+        h3 {
+            background-color: var(--colorContents);
+            color: #000;
+            margin: 30px 0 0 0;
+            padding: 8px;
+        }
+
+        h4 {
+            background-color: #0609c0;
+            margin-top: 50px;
+        }
+
+        #menu ul {
+            height: 80vh;
+            list-style: none;
+            padding: 0;
+        }
+
+        #menu a {
+            background-color: var(--colorIndex);
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            padding: 11px 0;
+            margin: 6px auto;
+            text-align: center;
+            border-radius: 50px;
+            width: 320px;
+        }
+
+        #menu a:hover {
+            background-color: #e00;
+        }
+
+        article {
+            margin-bottom: 70px;
+        }
+
+
+        .icon-pacman::after {
+            content: "";
+            display: block;
+            width: 40%;
+            margin: 0 auto 100px auto;
+            border-bottom: 14px dotted white;
+            position: relative;
+
+        }
+
+
+        /*  estilos del botón VOLVER */
+        #btn_volver {
+            width: 100px;
+            height: 50PX;
+            background-color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            line-height: 50px;
+            color: #042444;
+            display: block;
+            text-align: center;
+            box-shadow: 0 8px 8px rgba(0, 0, 0, .6);
+            border-radius: 40px;
+            position: sticky;
+           top: 90vh;
+           margin-left: 60vw;
+           margin-bottom: -50px;
+            z-index: 1;
+        }
+
+
+        /* estilos de los CONTROLES */
+
+        .cpanel {
+            width: 80%;
+            max-width: 250px;
+            background-color: #2e0294;
+            margin: 10px auto;
+            padding: 30px;
+            position: relative;
+            border: 2px dotted white;
+        }
+
+        .cpanel__top {
+            height: 200px;
+        }
+
+        .cpanel__button {
+            --diametro: 25px;
+            display: inline-block;
+            width: var(--diametro);
+            height: var(--diametro);
+            line-height: var(--diametro);
+            background-color: yellow;
+            border-radius: 50%;
+            margin: 0 10px 10px;
+            padding: 10px;
+            text-align: center;
+            font-weight: 900;
+            color: #e00;
+            font-size: 1.5em;
+            position: relative;
+        }
+
+        .cpanel__top .--start {
+            background-color: #fff;
+            margin: 0 0 20px 75px;
+        }
+
+        .stick {
+            position: relative;
+            width: 35px;
+            height: 35px;
+            left: -55%;
+            top: 110px;
+        }
+
+        .six__pack {
+            width: 230px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            margin: 0 0 10px 30px;
+        }
+
+        .six__pack .cpanel__button:nth-child(2) {
+            bottom: 10px;
+        }
+
+        .six__pack .cpanel__button:nth-child(5) {
+            bottom: 10px;
+        }
+
+        .six__pack .cpanel__button:nth-child(3n) {
+            bottom: 20px;
+        }
+
+        .cpanel__front {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+
+        /*  estilo del FOOTER */
+
+        footer {
+            text-align: center;
+            border-top: 1px solid white;
+            margin-top: 20px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: lightblue;
+        }
+
+
+        /* estilos pantallas MEDIANAs (NO celu) */
+
+        @media screen and (min-width: 600px) {
+            body {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .encabezado {
+                flex-direction: row;
+                height: 50px;
+                justify-content: space-evenly;
+                align-items: center;
+                margin: 0;
+
+            }
+
+            #contents {
+                padding: 0px;
+                margin: 0;
+            }
+
+            h1,
+            h2 {
+                font-size: 2em;
+
+            }
+
+
+
+            #menu ul {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                justify-content: space-evenly;
+                height: 100vh;
+                margin: 0 0 100px 0;
+                background-image: url("");
+            }
+
+            #btn_volver {
+                margin-left: 80vw;
+                top: 80vh;
+            }
+        }
+
+
+        
+
+
+        /* pantallas grandes / COMPUTADORA */
+
+        @media screen and (min-width:900px) {
+            .foto{
+                width: 100%;
+                height: 400px;
+                margin: 40px auto;
+                background-image: url("img/joy05pm.png");
+                background-size:contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                filter: drop-shadow(0px 0px 10px #fff);
+                
+            }
+
+            #contents {
+                padding: 10px;
+                margin: 20px 0;
+            }
+
+            #btn_volver {
+                margin-left: 90%;
+                top: 90%;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <div class="encabezado">
+
+            <h1 id="titulo">INSTRUCTIVO</h1>
+            <h2> Multijuegos Joy05</h2>
+        </div>
+
+        <div class="foto"></div>
+        <h3 id="contents">Contenidos</h3>
+        <nav id="menu">
+            <ul>
+                <li><a href="#Consideraciones">Consideraciones generales</a></li>
+                <li><a href="#Sistemas">Sistemas por orden de aparición</a></li>
+                <li><a href="#Encendido">Encendido</a></li>
+                <li><a href="#Controles">Controles</a></li>
+                <li><a href="#Seleccion">Selección de juegos</a></li>
+                <li><a href="#Menues">Menúes de configuración</a></li>
+                <li><a href="#Apagar">Apagado</a></li>
+                <li><a href="#aspecto">Personalización (aspecto)</a></li>
+                <li><a href="#compatibilidad">Compatibilidad de emuladores</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+    <main>
+        <a href="#titulo" id="btn_volver"> <span class="icon-home">Índice</span> </a>
+
+
+        <article id="Consideraciones">
+            <h3>Consideraciones generales</h3>
+            <p> Colocar la máquina en una superficie estable, firme, y conectarla a un toma 220v, preferentemente
+                protegido
+                de altas/bajas de tensión.</p>
+            <p>Se recomienda apagar la máquina por 15 minutos luego de utilizarla cada 2 o 3 horas, para extender la
+                vida
+                útil de sus componentes electrónicos.</p>
+            <p>Para limpiarla, utilizar un paño suave, seco, no utilizar productos con alcohol que dañarán el vinilo
+                decorativo.</p>
+            <p>La garantía se extiende por 6 meses desde la fecha de entrega de la máquina y cubre desperfectos en el
+                hardware o software de fábrica, no así el desgaste o rotura por mal uso de los controles, cables,
+                vinilos
+                decorativos y demás partes.<br>
+            </p>
+            <P>Puede suceder que algunos juegos no corran óptimamente, igual que si fuesen en la consola original, y
+                esto es
+                porque la máquina intenta emular lo más fielmente posible los distintos sistemas pero, algunos son más
+                demandantes de recursos, como es el caso de Nintendo 64 y Sega Dreamcast. En estos sistemas se
+                recopilaron
+                los títulos que, si bien presentan alguna ralentización o problemas de sonido, se puede considerar que
+                son
+                jugables. </P>
+
+
+            <h4>Especificaciones técnicas</h4>
+            <p>Tamaño: 55cm (ancho) x 20cm (prof) x 13cm (alto). </p>
+            </p>CPU: Amlogic S905W; RAM: 1gb; ROM: 64gb.</p>
+            </p> Interfaz: Emuelec; Theme: Artflix.</p>
+            </p>Cantidad de sistemas: 16. Total de juegos: 5.500.</p>
+
+        </article>
+        <span class="icon-pacman"></span>
+
+        <article id="Sistemas">
+            <h3>Sistemas por orden de aparición </h3>
+            <ul>
+                <li>M.A.M.E.<i>: arcades clásicos de los ´80 y ´90.</i> </li>
+                <li>Atari 2600<i>: una de las primeras consolas de los ´80.</i> </li>
+                <li>Atari 7800<i>: sucesora de la Atari 5200.</i> </li>
+                <li>Matel Intellivision<i>: otra consola de los ´80.</i> </li>
+                <li>Nec TurboGrafx16<i>: consola japonesa de 16 bits. </i> </li>
+                <li>Nintendo 64<i>: consola 3D, de 64 bits, lanzada en los ´90, rival de la Sony Playstation. </i> </li>
+                <li>Nintendo NES<i>: consola de 8 bits. El clásico "family game".</i> </li>
+                <li>Nintendo Gameboy Color<i>: consola portátil de 8 bits.</i> </li>
+                <li>Nintendo Super NES<i>: consola de 16 bits, rival de la Sega Genesis. Muy exitosa mundialmente.</i>
+                </li>
+                <li>Neo Geo System<i>: sistema de arcades, distinto a MAME.</i> </li>
+                <li>Sega 32X<i>: accesorio de Sega Genesis para juegos con mejor calidad gráfica, similar a los arcades
+                        y
+                        alguno en 3D. </i> </li>
+                <li>Sega Dreamcast<i>: Consola de 128 bits, que compitió con la PlayStation 2, pero con juegos
+                        orientados al
+                        tipo arcade.</i></li>
+                <li>Sega Game Gear<i>: consola portátil de 8 bits, rival de la Game Boy.</i> </li>
+                <li>Sega Master System<i>: consola de 8 bits, rival de NES, poco conocida en ntro país. </i> </li>
+                <li>Sega Megadrive<i>: consola de 16 bits, rival de Super NES, la más vendida en ntro país, conocida
+                        también
+                        como Sega Genesis. </i> </li>
+                <li>Sony PlayStation<i>: consola de 32 bits, juegos en 3D. La más vendida la historia. </i> </li>
+                <li>GZ DOOM<i>: adaptación del clásico DOOM de PC. </i> </li>
+                <li>All Games<i>: esta sección incluye a todos los juegos, de todos los sistemas disponibles. </i> </li>
+                <li>Favorites<i>: incluye los juegos que se agregaron como Favoritos, para tenerlos más a mano. </i>
+                </li>
+            </ul>
+        </article>
+        <span class="icon-pacman"></span>
+
+        <article id="Encendido">
+            <h3>Encendido</h3>
+            <p>La máquina no posee una tecla de encendido, sino que lo hace automáticamente cuando se conecta a la
+                corriente, mediante el adaptador provisto.</p>
+            <p>Para encender la máquina, conectar el cable HDMI en la parte posterior y, el otro extremo, a un puerto
+                HDMI
+                del TV. </p>
+            <p>En el TV seleccionar el puerto correcto (comunmente con <i>input</i> o <i>source</i>, en el control
+                remoto,
+                según el modelo de TV.)</p>
+            <p>Luego conectar el adaptador provisto, a un toma 220v y el otro extremo a la parte posterior de la
+                máquina.
+                Automáticamente el sistema encenderá y, en algunos segundos mostrará en pantalla la marca 'Gadnic
+                Electronics'.</p>
+            <p>Acto seguido mostrará el logo EMUELEC (que es la interfaz del sistema) y el logo del <i>theme</i> elegido
+                (por defecto, ARTFLIX). Al finalizar, cargará el primer menú de juegos, que es el del sistema MAME.</p>
+        </article>
+        <span class="icon-pacman"></span>
+
+        <article id="Controles">
+            <h3>Controles</h3>
+
+            <p>A los fines de entender mejor esta guía, a continuación se presenta la disposición de los controles para
+                el
+                jugador 1 que, junto con los botones frontales, sirven para moverse y actuar en los menúes de los
+                juegos.
+            </p>
+
+            <!-- DIBUJO DE LOS CONTROLES -->
+            <div>
+                <!-- panel superior -->
+                <div class="cpanel cpanel__top">
+                    <!-- botón START -->
+                    <div class="cpanel__button --start">
+                        <img src="https://pic.onlinewebfonts.com/thumbnails/icons_424755.svg"
+                            alt="figura de player 1 típica de las máquinas 'arcade'">
+                    </div>
+                    <!-- palanca: -->
+                    <div class="cpanel__button stick"></div>
+                    <!-- grupo de seis botones -->
+                    <div class="six__pack">
+                        <div class="cpanel__button">1</div>
+                        <div class="cpanel__button">2</div>
+                        <div class="cpanel__button">3</div>
+                        <div class="cpanel__button">4</div>
+                        <div class="cpanel__button">5</div>
+                        <div class="cpanel__button">6</div>
+                    </div>
+                </div>
+
+                <!-- panel frontal -->
+                <div class="cpanel cpanel__front">
+                    <div class="cpanel__button ">A</div>
+                    <div class="cpanel__button ">B</div>
+                </div>
+            </div>
+
+
+            <p>El <strong>Botón Blanco</strong> sirve como Start (inicio), para cada jugador.</p>
+            <p>Los botones numerados tienen distintas funciones, según se indican en próximos apartados.</p>
+            <p> Los botones frontales <b> A </b> y <b> B </b> sirven para, en el caso de los sistemas MAME y NEO GEO,
+                introducir ficha para el jugador 1 y jugador 2, respectivamente.</p>
+            <p>El botón ubicado en la parte posterior se provee sólo a los fines de mantenimiento o resolución de
+                problemas
+                técnicos, según se explica más adelante.</p>
+        </article>
+        <span class="icon-pacman"></span>
+
+        <article id="Seleccion">
+            <h3>Selección de juegos</h3>
+            <p>El primer menú que se muestra, al encender la máquina, corresponde a los juegos del sistema MAME
+                (arcades).
+                Con los botones <b>4</b> o <b>6</b> se puede cambiar a los distintos sistemas disponibles.</p>
+            <ul>
+                <li><b>Palanca</b>: hacia cualquier dirección, recorre los juegos del sistema actual.</li>
+                <li><b>1</b>: sale al menú de selección de sistemas.</li>
+                <li><b>2</b>: selecciona el juego que se está mostrando.</li>
+                <li><b>3</b>: agrega o elimina el juego en Favoritos.</li>
+                <li><b>4</b>: cambia al sistema anterior.</li>
+                <li><b>5</b>: muestra un juego al azar.</li>
+                <li><b>6</b>: cambia al sistema siguiente.</li>
+                <li><b>A</b> o <b>B</b>: abre el "Menú de Opciones" (Options). </li>
+                <li><strong>Botón blanco</strong>: abre el "Menú Principal".</li>
+            </ul>
+
+            <p> Los botones <b>2</b> y <b>1</b> sirven además, para seleccionar un ítem o retroceder, respectivamente,
+                entre
+                los menúes Principal y Opciones.</p>
+
+            <h4>Controles especiales dentro del juego</h4>
+            <p>Mientras jugamos podemos ejecutar una serie de comandos especiales presionado <b>A</b> conjuntamente con
+                otro
+                botón:</p>
+            <ul>
+                <li><b>A</b> + <strong>Botón Blanco</strong>: sale del juego (se debe presionar el
+                    <strong>blanco</strong>
+                    dos veces).
+                </li>
+                <li><b>A</b> + <b>3</b>: acelera (adelanta) la velocidad del juego. </li>
+                <li><b>A</b> + <b>4</b>: carga una partida guardada.</li>
+                <li><b>A</b> + <b>6</b>: guarda la partida en el slot actual.</li>
+                <li><b>A</b> + <b>Palanca a la izquierda o derecha</b>: selecciona el slot para guardar.</li>
+                <li><b>A</b> + <b>Palanca hacia arriba o abajo</b>: sube o baja el volumen.</li>
+            </ul>
+            <p><i>Aclaración: algunos juegos del sistema MAME no permiten guardar la partida.</i></p>
+        </article>
+        <span class="icon-pacman"></span>
+
+
+        <article id="Menues">
+            <h3>Menúes de configuración</h3>
+            <p>La máquina permite acceder al Menú Principal y al Menú de Opciones, para cambiar distintos parámetros
+                según
+                los gustos del usuario. También permite acceder a la configuración propia de cada sistema (para usuarios
+                avanzados).</p>
+
+            <h4>Menú Principal</h4>
+            <p>Presionando el <strong>Botón Blanco</strong> en la lista de juegos, se accede al Menú Principal. Este
+                contiene todas las condiguraciones generales de la máquina.</p>
+            <p>Tener precaución, dado que se pueden cambiar parámetros como la salida de video, de audio, modificar
+                controles, entre otros aspectos críticos.</p>
+            <p>En líneas generales, la principal utilidad reside en poder cambiar la apariencia de los menúes
+                (ingresando a
+                "configuración de interfaz") y poder apagar la máquina, como se describe más adelante. </p>
+
+            <h4>Menú de Opciones</h4>
+            <p>Se accede presionando cualquiera de los botones <b>A</b> o <b>B</b> en el menú de juegos. Permite filtrar
+                los
+                juegos por texto (para buscar uno específico), ordenar los juegos a criterio y filtrar (en "otros
+                filtros")
+                por género, desarrollador, favoritos, etc.</p>
+
+            <h4>Configuración avanzada por sistema</h4>
+            <p>Estando dentro de un juego, se puede acceder a la configuración avanzada presionando <b>A</b> más el
+                botón
+                posterior de la máquina. Esto <span id="atenti">sólo es recomendable para usuarios con
+                    conocimientos</span>
+                , dado que puede dejar inutilizado el sistema. Se provee este acceso a los fines de, principalmente,
+                mentenimiento o resolución de problemas.</p>
+        </article>
+        <span class="icon-pacman"></span>
+
+
+        <article id="Apagar">
+            <h3>Apagado del sistema</h3>
+
+            <p>Ante un eventual 'congelamiento' o por alguna falla por la que el juego quede 'tildado' y no permita
+                salir,
+                se puede desconectar directamente la alimentación 220v.</p>
+            <p id="apagado">Sin embargo, <STRONg>el correcto apagado</STRONg>, a los fines de prolongar la vida útil de
+                la
+                máquina, se realiza en el Menú Principal (<strong>Botón Blanco</strong>), seleccionando
+                <STRONg>SALIR</STRONg> y luego eligiendo <strong>APAGAR EL SISTEMA</strong>. En caso de estar jugando,
+                primero hay que salir del juego, con <b>A</b> + <strong>Botón Blanco</strong>.
+            </p>
+
+            <p>Luego de unos segundos, la pantalla se apagará (mostrando probablemente un mensaje propio del TV del tipo
+                "no
+                signal" o "sin señal") con lo cual ya se puede desconectar la alimentación 220v. Por regla general, a
+                los 10
+                segundos de haber seleccionado la opción de apagar, se puede desconectar la alimentación sin problemas.
+            </p>
+        </article>
+        <span class="icon-pacman"></span>
+
+
+        <article id="aspecto">
+            <h3>Personalización (aspecto)</h3>
+            <p> Es posible, como se menciona más arriba, modificar el tema (theme) de los menúes de la máquina, según
+                las
+                preferencias del usuario.</p>
+            <p>Esto afecta la forma en cómo se muestran los listados de juegos, colores, tipografías, videos, etc.</p>
+            <p>Se accede a dicha opción abriendo el Menú Principal (<strong>Botón Blanco</strong>) e ingresando a
+                "configuración de interfaz".</p>
+            <p>Por defecto, el tema seleccionado es Alekfull-Artflix pero, se puede seleccionar otros 16 temas
+                distintos.
+                También, al seleccionar un tema se puede personalizar ingresando a "configuración de tema".</p>
+            <p id="atenti">Se recomienda tomar nota de los cambios realizados, dado que no se provee de una opción para
+                reestablecer a la configuración original.</p>
+        </article>
+        <span class="icon-pacman"></span>
+
+        <article id="compatibilidad">
+            <h3>Compatibilidad de emuladores (avanzado)</h3>
+            <p>En caso de que al seleccionar un juego, no inicie, puede deberse a una incompatibilidad con el emulador
+                que
+                tiene asociado por defecto.</p>
+            <p>Si bien todos los sistemas han sido probados, puede haber casos en donde sea necesario modificar, para
+                algún
+                juego en particular, el emulador asociado, es decir, el programa que imita a la consola o arcade.</p>
+            <p>Los sistemas que podrían tener este inconveniente, son MAME y NEO GEO dado que emulan juegos arcades, los
+                cuales, a diferencia de las consolas hogareñas, estaban desarrollados por distintos fabricantes, con
+                distintas especificaciones para cada placa.</p>
+            <p>Para ese caso se puede probar cambiar el emulador asociado al juego, ingresando al Menú Options (botón
+                <b>A</b>), luego "opciones avanzadas del juego" y luego eligiendo en "<i>Emulator</i>" algunas de las
+                opciones disponibles.
+            </p>
+        </article>
+       
+
+    </main>
+
+    <footer>
+        <p>Marzo de 2024 - Lucas Ferretty <br>
+            Contacto: <a href="mailto:lucasferrety@gmail.com">lucasferrety@gmail.com</a> <br>
+            Instagram: @lucasferretty</p>
+    </footer>
+
+
+
+
+
+
+
+</body>
+
+</html>
