@@ -84,6 +84,11 @@ h4 {
     background-color: #e00;
 }
 
+#menu a:active{
+    background-color: #000;
+} 
+
+
 article {
     margin-bottom: 70px;
 }
@@ -155,11 +160,12 @@ strong{
     box-shadow: 0 8px 8px rgba(0, 0, 0, .6);
     border-radius: 40px;
     position: sticky;
-   top: 90vh;
+   top: 85%;
    margin-left: 60vw;
    margin-bottom: -50px;
     z-index: 1;
 }
+
 
 
 /* estilos de los CONTROLES */
